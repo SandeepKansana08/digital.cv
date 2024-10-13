@@ -1,5 +1,5 @@
 /*===== GOOGLE FONTS =====*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&display=swap');
 
 /*===== VARIABLES CSS =====*/
 :root {
@@ -14,7 +14,7 @@
   --body-color: #FCFCFC;
 
   /*========== Font and typography ==========*/
-  --body-font: 'Poppins', sans-serif;
+  --body-font: "Roboto Slab", serif; ;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
@@ -78,7 +78,7 @@ h1,h2,h3{
 
 ul{
   padding: 0;
-  list-style: none;
+  list-style-type: none;
 }
 
 a{
@@ -101,7 +101,7 @@ img{
   font-weight: var(--font-semi-bold);
   text-transform: uppercase;
   letter-spacing: .35rem;
-  text-align: centre;
+  /* text-align: centre; */
   margin-bottom: var(--mb-3);
 }
 
@@ -288,12 +288,12 @@ img{
   text-align: center;
 }
 
-/*========== EDUCATION AND EXPERIENCE ==========*/
-.education__content, .experience__content{
+/*========== EDUCATION AND Projects ==========*/
+.education__content, .projects__content{
   display: flex;
 }
 
-.education__time, .experience__time{
+.education__time, .projects__time{
   padding-right: 1rem;
 }
 
@@ -315,21 +315,44 @@ img{
   transform: translate(7px, 0);
 }
 
-.education__data, .experience__data{
+.education__data, .projects__data{
   gap: .5rem;
 }
 
-.education__title, .experience__title{
+.education__title, .projects__title{
   font-size: var(--h3-font-size);
 }
 
-.education__studies, .experience__company{
+.education__studies, .projects__company{
   font-size: var(--small-font-size);
   color: var(--title-color);
 }
 
 .education__year{
   font-size: var(--smaller-font-size);
+}
+
+.projects__data ul{
+  list-style-type: square;
+}
+
+.project__description{
+  margin-bottom: var(--mb-2);
+}
+
+.projects__button{
+  font-size: var(--h3-font-size);
+  border-radius: .359rem;
+  border: none;
+  background-color:var(--text-color-light) ;
+  color: var(--container-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.projects__button:hover{
+  background-color: var(--text-color);
+  transform: scale(1.1);
 }
 
 /*========== SKILLS AND LANGUAGES ==========*/
