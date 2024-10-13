@@ -448,5 +448,44 @@ img{
     display: none;
   }
 
-  .resume
+  .resume{
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+    background-color: var(--container-color);
+    box-shadow: 0 0 8px rgba(13, 12, 12, .15);
+  }
+
+  .resume__left{
+    background-color: var(--container-color-alt);
+  }
+
+  .resume__left, .resume__right{
+    padding: 0 1.5rem;
+  }
+
+  .section-title, .profile__description{
+    text-align: initial;
+  }
+
+  .home__container{
+    gap: 1.5rem;
+  }
+
+  .home__button-movil{
+    display: none;
+  }
+
+  .refrences__container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .languages__content{
+    grid-template-columns: repeat(3, max-content);
+    column-gap: 3.5rem;
+  }
+
+  .interests__container{
+    grid-template-columns: repeat(4, max-content);
+    column-gap: 3.5rem;
+  }
 }
