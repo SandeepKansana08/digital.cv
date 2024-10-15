@@ -50,8 +50,38 @@ function scrollTop(){
 window.addEventListener('scroll',scrollTop)
 
 /*==================== DARK LIGHT THEME ====================*/ 
+const themeButton = document.getElementById('theme-button')
 
+const darkTheme = 'dark-theme'
 
+const iconTheme = 'bx-sun'
+
+// Previously selected topic (if user selected)
+const selectedTheme = localStorage.getItem('selected-theme')
+const selectedIcon = localStorage.getItem('selected-icon')
+
+// We obtain the current theme that the interface has by validating the dark-theme class
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bxs-moon' : 'bx-sun'
+
+// Activate / deactivate the theme manually with the button
+themeButton.addEventListener('click', () => {
+    document.body.classList.toggle(darkTheme);
+  
+    // Check if the button currently has the moon icon
+    if (themeButton.classList.contains('bxs-moon')) {
+      themeButton.classList.remove('bxs-moon');
+      themeButton.classList.add('bx-sun');
+    } else {
+      themeButton.classList.remove('bx-sun');
+      themeButton.classList.add('bxs-moon');
+    }
+  
+    // Save preferences to localStorage
+    localStorage.setItem('selected-theme', getCurrentTheme());
+    localStorage.setItem('selected-icon', getCurrentIcon());
+  });
+  
 /*==================== REDUCE THE SIZE AND PRINT ON AN A4 SHEET ====================*/ 
 
 

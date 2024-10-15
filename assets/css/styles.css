@@ -46,18 +46,137 @@ html{
 }
 
 /*========== Variables Dark theme ==========*/
+body.dark-theme{
+  --title-color: #f2f2f2;
+  --text-color: #bfbfbf;
+  --container-color: #212221;
+  --container-color-alt: #181616;
+  --body-color: #2b2b2b;
 
+}
 
 /*========== Button Dark/Light ==========*/
+.change-theme{
+  position: absolute;
+  right: 0;
+  top: 2.2rem;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
 
+.change-theme:hover{
+  color: var(--title-color);
+}
 
 /*========== Font size variables to scale cv ==========*/
-
+body.scale-cv{
+  --h1-font-size: .938rem;
+  --h2-font-size: .938rem;
+  --h3-font-size: .875rem;
+  --normal-font-size: .813rem;
+  --small-font-size: .75rem;
+  --smaller-font-size: .688rem;
+}
 
 /*========== Generate PDF button ==========*/
+.generate-pdf{
+  display: none;
+  position: absolute;
+  top: 2.2rem;
+  left: 0;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
 
+.generate-pdf:hover{
+  color: var(--title-color);
+}
 
 /*========== Classes modified to reduce size and print on A4 sheet ==========*/
+.scale-cv .change-theme,
+.scale-cv .generate-pdf{
+  display: none;
+}
+
+.scale-cv .bd-container{
+  max-width: 595px;
+}
+
+.scale-cv .section{
+  padding: 1.5rem 0 .80rem;
+}
+
+.scale-cv .section-title{
+  margin-bottom: .75rem;
+}
+
+.scale-cv .resume__left,
+.scale-cv .resume__right{
+  padding: 0 1rem;
+}
+
+.scale-cv .home__img{
+  width: 90px;
+  height: 90px;
+}
+
+.scale-cv .home__container{
+  gap: 1.5rem;
+}
+
+.scale-cv .home__data{
+  gap: .25rem;
+}
+
+.scale-cv .home__address,
+.scale-cv .social__container{
+  gap: .75rem;
+}
+
+.scale-cv .home__icon,
+.scale-cv .social__icon,
+.scale-cv .interests__icons{
+  font-size: 1rem;
+}
+
+.scale-cv .education__container,
+.scale-cv .projects__container,
+.scale-cv .certificate__container{
+  gap: 1rem;
+}
+
+.scale-cv .education__time,
+.scale-cv .projects__time{
+  padding-right: .5rem;
+}
+
+.scale-cv .education__rounder{
+  width: 11px;
+  height: 11px;
+  margin-top: .22rem;
+}
+
+.scale-cv .education__line{
+  width: 1px;
+  height: 110%;
+  transform: translate(5px,0);
+}
+
+.scale-cv .education__data,
+.scale-cv .projects__data{
+  gap: .25rem;
+}
+
+.scale-cv .skills__name{
+  margin-bottom: var(--mb-1);
+}
+
+.scale-cv .interests__container{
+  column-gap: 2.5rem;
+}
+
 body{
   margin: 0 0 var(--header-height) 0;
   padding: 0;
@@ -93,6 +212,7 @@ img{
 /*========== CLASS CSS ==========*/
 .section{
   padding: 1.5rem 0;
+  
 }
 
 .section-title{
@@ -100,8 +220,8 @@ img{
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: .35rem;
-  /* text-align: centre; */
   margin-bottom: var(--mb-3);
 }
 
@@ -270,25 +390,23 @@ img{
 .social__link{
     display: inline-flex;
     align-items: center;
-    font-size: var(--small-font-size);
+    font-size: var(--h3-font-size);
     color: var(--text-color);
+    transition: all 0.3s;
 }
 
 .social__link:hover{
   color:var(--title-color);
+  transform: scale(1.1);
 }
 
-.socil__icon{
+.social__icon{
   font-size: 1.2rem;
   margin-right: .25rem;
 }
 
-/*========== PROFILE ==========*/
-.profile__description{
-  text-align: center;
-}
 
-/*========== EDUCATION AND Projects ==========*/
+/*========== EDUCATION AND PROJECTS ==========*/
 .education__content, .projects__content{
   display: flex;
 }
@@ -383,22 +501,6 @@ img{
   margin-bottom: var(--mb-1);
 }
 
-/*========== REFERENCES ==========*/
-.references__content{
-  gap: .25rem;
-}
-
-.references__subtitle{
-  color: var(--text-color-light);
-}
-
-.refrences__subtitle, .refrences__contact{
-  font-size: var(--smaller-font-size);
-}
-
-.refrences__title{
-  font-size: var(--h3-font-size);
-}
 
 /*========== INTERESTS ==========*/
 .interests__container{
@@ -486,6 +588,10 @@ img{
     padding: 0 1.5rem;
   }
 
+  .generate-pdf{
+    display: inline-block;
+  }
+
   .section-title, .profile__description{
     text-align: initial;
   }
@@ -498,9 +604,6 @@ img{
     display: none;
   }
 
-  .refrences__container{
-    grid-template-columns: repeat(2, 1fr);
-  }
 
   .languages__content{
     grid-template-columns: repeat(3, max-content);
